@@ -12,12 +12,9 @@ def create_main_account(sender, instance, created, **kwargs):
     if created:
         Accounts.objects.create(
             user = instance,
-            account_type = "MAIN",
-            account_title = "Main Account",
             currency = "NGN",
             balance = 0.00,
-            interest_rate = 0.04,
-            account_status = "ACTIVE",
+            interest_rate = 0.45,
             withdrawal_limit = 1000000.00,
             
         )
