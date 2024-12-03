@@ -7,12 +7,6 @@ from django.core.validators import MinLengthValidator
 
 from .managers import UserManager
 
-CHOICES = (
-    ("PENDING","PENDING"),
-    ("",""),
-    ("",""),
-)
-
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=200, unique=True)
