@@ -7,6 +7,11 @@ from django.core.validators import MinLengthValidator
 
 from .managers import UserManager
 
+CHOICES = (
+    ("PENDING","PENDING"),
+    ("",""),
+    ("",""),
+)
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -20,7 +25,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     date_joined = models.DateTimeField(_("Date Joined"), auto_now_add=True)
     last_login = models.DateTimeField(_("Last Login Date"), auto_now=True)
-     
+    choices = models.CharField(max_length=30, )
      
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["first_name", "last_name", "phone_number"]
@@ -31,5 +36,10 @@ class User(AbstractBaseUser, PermissionsMixin):
         return f"{self.email}"
     
 
+
+        
+    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 

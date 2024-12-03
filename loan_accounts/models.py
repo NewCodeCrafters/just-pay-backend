@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 from .choices import CURRENCY_CHOICES
 
-class Accounts(models.Model):
+class Loan_accounts(models.Model):
     account_id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     account_number = models.PositiveBigIntegerField(null=True, blank=True, unique=True)
@@ -19,8 +19,8 @@ class Accounts(models.Model):
         return self.last_withdrawal_date
 
     class Meta:
-        verbose_name = "Account"
-        verbose_name_plural = "Accounts"
+        verbose_name = "Loan_account"
+        verbose_name_plural = "Loan_accounts"
 
 
 

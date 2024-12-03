@@ -29,7 +29,9 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
-    
+    path('Loan_accounts/', include('loan_accounts.urls')),
+    path('profiles/', include('profiles.urls')),
+    path('loan/', include('loan.urls')),
     
 ]
 
