@@ -7,11 +7,6 @@ from django.core.validators import MinLengthValidator
 
 from .managers import UserManager
 
-CHOICES = (
-    ("PENDING","PENDING"),
-    ("",""),
-    ("",""),
-)
 
 
 class User(AbstractBaseUser, PermissionsMixin):
